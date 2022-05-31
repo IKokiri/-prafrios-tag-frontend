@@ -135,9 +135,34 @@ const getTagById = async (id) => {
     return tags
 }
 
+
+const removeTagById = async (id) => {
+
+    const tags = await fetch(`${baseUrl}tag/${id}`, {
+        method: 'DELETE',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        }
+    })
+        .then(data => {
+            return data.json()
+        })
+        .catch(err => {
+            // Catch and display errors
+        })
+    return tags
+}
+
 const useTag = async (id) => {
     const tag = await getTagById(id)
     fillTag(tag[0])
+}
+
+const removeTag = async (id) => {
+    const tag = await removeTagById(id)
+    window.location.reload()
+
 }
 
 const listTags = async (model) => {
@@ -152,6 +177,7 @@ const listTags = async (model) => {
                     <h5 class="card-title">${item.title}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">${item.obs1}</h6>
                     <a href="#" class="card-link" onClick='useTag(${item.id})' >Usar</a>
+                    <a href="#" class="card-link" onClick='removeTag(${item.id})' >Remover</a>
                 </div>
             </div>
         </div>
