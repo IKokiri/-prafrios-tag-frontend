@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Prafrios</title>
+    <style>
+        div {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-bottom: 2px;
+            padding-left: 5px;
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+
+            .printable,
+            .printable * {
+                visibility: visible;
+            }
+
+            .printable {
+                position: center;
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="offset-5 col-4">
+            <h1>PRÁ FRIOS</h1>
+        </div>
+        <div class="offset-5 col-4">
+
+            <a class="btn btn-primary" href="index.html" role="button">MODELO 01</a>
+            <a class="btn btn-primary" href="modelo2.html" role="button">MODELO 02</a>
+
+        </div>
+        <br>
+        <div id="modeloOne" class="modelTag printable d-flex justify-content-center row">
+            <div style="width:700px; border: 1px solid;">
+                <div style="font-size:30px; text-align: center;">
+                    <span id='title' class="changeData">PRÁ LIGA</span>
+                </div>
+                <div style="text-align: center;">
+                    <span id='obs1' class="changeData">Estabilizante para conserva de carnes</span>
+                </div>
+                <div style="font-weight: bold; font-size: 18px;">
+                    <span id='obs2' class="changeData">FABRICAÇÃO: 18/05/2022 VALIDADE: 18/11/2022 LOTE:
+                        00138</span>
+                </div>
+                <div style="font-size: 14px;">
+                    <span id='obs3' class="changeData">Registro MS: n: Isento, COnforme a resolução ANVS
+                        23/00</span>
+                </div>
+                <div style="font-size: 14px;">
+                    <span id='obs4' class="changeData">aup ; doi; dipoa n: Uso revogado, conforme IN n 49 MAPA /
+                        SDAde
+                        14/09/2006</span>
+                </div>
+                <div style="font-size: 14px;">
+                    <b><span id='obs5' class="changeData">Sugestão de uso: 250g para 100 Kg de massa</span></b>
+                </div>
+                <div style="font-size: 14px;">
+                    <span id='obs6' class="changeData">Ingredientes: Tripolifosfato de sódio, Colágeno</span>
+                </div>
+                <div style="font-size: 14px;">
+                    <span id='obs7' class="changeData">Evitar armazenar em locais expostos à grande variações de
+                        temperatura e umidade</span>
+                </div>
+                <div style="font-size: 14px;">
+                    <span id='obs8' class="changeData">PESO LIQUIDO: 250g</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="offset-5 col-1">
+                <button id='print' class="btn btn-success">Imprimir</button>
+            </div>
+            <div class="col-1">
+                <button id='save' class="btn btn-success">Salvar</button>
+            </div>
+        </div>
+
+        <div class="row" id="listTags">
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="textTagModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Alterar</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" class="form-control" id="textTag">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" id="saveTextTag">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+        integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+    <script>
+        listTags('modelo1')
+    </script>
+</body>
+
+</html>
