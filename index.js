@@ -1,5 +1,5 @@
-const baseUrl = 'https://prafrios-tag-backend.herokuapp.com/'
-// const baseUrl = 'http://localhost:4000/'
+// const baseUrl = 'https://prafrios-tag-backend.herokuapp.com/'
+const baseUrl = 'http://34.219.146.1:4000/'
 let currentIdChangeText = false
 let currentText = false
 let currentModel = false
